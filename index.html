@@ -44,45 +44,38 @@
         function playRound(playerSelection, computerSelection) {
             // Compares playerSelection and computerSelection
             
-            let point;
-            rounds++
+            
             console.log(`You entered ${playerSelection}.`)
             console.log(`Computer entered ${computerSelection}.`)
             
             if (playerSelection === "rock" && computerSelection ==="paper"){
                 console.log(`You lose! ${computerSelection} beats ${playerSelection}.`)
-                point = "c";
-            }
+                computerScore++            
+                }
             else if (playerSelection === "paper" && computerSelection ==="scissors"){
                 console.log(`You lose! ${computerSelection} beats ${playerSelection}.`)
-                point = "c";
-            }
+                computerScore++            
+                }
             else if (playerSelection === "scissors" && computerSelection ==="rock"){
                 console.log(`You lose! ${computerSelection} beats ${playerSelection}.`)
-                point = "c";
-            }
+                computerScore++            
+                }
             else if (playerSelection === "rock" && computerSelection ==="scissors"){
                 console.log(`You win! ${playerSelection} beats ${computerSelection}.`)
-                point = "p";
-            }
+                playerScore++           
+                }
             else if (playerSelection === "paper" && computerSelection ==="rock"){
                 console.log(`You win! ${playerSelection} beats ${computerSelection}.`)
-                point = "p";
-            }
+                playerScore++            
+                }
             else if (playerSelection === "scissors" && computerSelection ==="paper"){
                 console.log(`You win! ${playerSelection} beats ${computerSelection}.`)
-                point = "p";
-            }
+                playerScore++            
+                }
             else if (playerSelection === computerSelection) {
                 console.log("Tie!")
-            }
-
-            if (point === "p") {
-                playerScore++
-            } else if(point === "c"){
-                computerScore++
-            }
-
+                }
+            rounds++
             if (rounds === 5) {
                 console.log(`The result is: for you ${playerScore} and ${computerScore} for the computer.`)
                 if (playerScore > computerScore) {
