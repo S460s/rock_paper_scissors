@@ -8,26 +8,18 @@
 <body>
 
     <script>
-        let rounds = 0;
         let playerScore  = 0;
         let computerScore = 0;
+
+
         function computerPlay() {
             // Chooses a random value for computerPlay.
-
-            let randomValue = Math.floor(Math.random() * 3) + 1;
-            let pcSelection;
-
-            if (randomValue === 1) {
-                pcSelection = "rock"
+            switch (Math.floor(Math.random() * 3)) {
+                case 0: return "rock"
+                case 1: return "scissors"
+                case 2: return "paper"
+                    }
             }
-            else if (randomValue === 2) {
-                pcSelection = "paper"
-            }
-            else{
-                pcSelection = "scissors"
-            }
-            return pcSelection;
-        }
 
         function playerPlay() {
             // Ask the user for their choice and check if it is available.
@@ -75,8 +67,20 @@
             else if (playerSelection === computerSelection) {
                 console.log("Tie!")
                 }
-            rounds++
-            if (rounds === 5) {
+            
+        }
+
+        function game() {
+            // Play 5 rounds of the game.
+
+            let rounds = prompt("How many rounds do you want to play?")
+
+            for(let i = 1; i <= Number(rounds); i++){
+                let computerSelection = computerPlay();
+                let playerSelection = playerPlay();
+                playRound(playerSelection,computerSelection)
+                }
+
                 console.log(`The result is: for you ${playerScore} and ${computerScore} for the computer.`)
                 if (playerScore > computerScore) {
                     console.log("You won!")
@@ -86,21 +90,11 @@
                     console.log("Tie!")
                 }
             }
-        }
 
-        function game() {
-            // Play 5 rounds of the game.
-            
-            for(let i = 1; i <= 5; i++){
-                let computerSelection = computerPlay();
-                let playerSelection = playerPlay();
-                playRound(playerSelection,computerSelection)
-                }
-            }
+
         console.log("Welcome to rock-paper-scissor.")
         game();
 
     </script>
-
 </body>
 </html>
