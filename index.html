@@ -4,97 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rock-paper-scissors</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <script>
-        let playerScore  = 0;
-        let computerScore = 0;
+    <div id="result">
 
+    </div>
 
-        function computerPlay() {
-            // Chooses a random value for computerPlay.
-            switch (Math.floor(Math.random() * 3)) {
-                case 0: return "rock"
-                case 1: return "scissors"
-                case 2: return "paper"
-                    }
-            }
-
-        function playerPlay() {
-            // Ask the user for their choice and check if it is available.
-
-            let playSelection;
-            playSelection = prompt('Enter "rock", "paper" or "scissors."');
-            while (playSelection != "rock" && playSelection != "paper" && playSelection != "scissors") {
-                playSelection = prompt('You should enter only "rock", "paper" or "scissors."');
-                playSelection = playSelection.toLowerCase();      
-            }
-            return playSelection;
-        }   
-
-        function playRound(playerSelection, computerSelection) {
-            // Compares playerSelection and computerSelection
-            
-            
-            console.log(`You entered ${playerSelection}.`)
-            console.log(`Computer entered ${computerSelection}.`)
-            
-            if (playerSelection === "rock" && computerSelection ==="paper"){
-                console.log(`You lose! ${computerSelection} beats ${playerSelection}.`)
-                computerScore++            
-                }
-            else if (playerSelection === "paper" && computerSelection ==="scissors"){
-                console.log(`You lose! ${computerSelection} beats ${playerSelection}.`)
-                computerScore++            
-                }
-            else if (playerSelection === "scissors" && computerSelection ==="rock"){
-                console.log(`You lose! ${computerSelection} beats ${playerSelection}.`)
-                computerScore++            
-                }
-            else if (playerSelection === "rock" && computerSelection ==="scissors"){
-                console.log(`You win! ${playerSelection} beats ${computerSelection}.`)
-                playerScore++           
-                }
-            else if (playerSelection === "paper" && computerSelection ==="rock"){
-                console.log(`You win! ${playerSelection} beats ${computerSelection}.`)
-                playerScore++            
-                }
-            else if (playerSelection === "scissors" && computerSelection ==="paper"){
-                console.log(`You win! ${playerSelection} beats ${computerSelection}.`)
-                playerScore++            
-                }
-            else if (playerSelection === computerSelection) {
-                console.log("Tie!")
-                }
-            
-        }
-
-        function game() {
-            // Play 5 rounds of the game.
-
-            let rounds = prompt("How many rounds do you want to play?")
-
-            for(let i = 1; i <= Number(rounds); i++){
-                let computerSelection = computerPlay();
-                let playerSelection = playerPlay();
-                playRound(playerSelection,computerSelection)
-                }
-
-                console.log(`The result is: for you ${playerScore} and ${computerScore} for the computer.`)
-                if (playerScore > computerScore) {
-                    console.log("You won!")
-                } else if(playerScore < computerScore){
-                    console.log("You lost!")
-                }else{
-                    console.log("Tie!")
-                }
-            }
-
-
-        console.log("Welcome to rock-paper-scissor.")
-        game();
-
-    </script>
+    <div id="buttons">
+        <button value="paper" id="paper">Paper</button>
+        <button value="scissors" id="scissors">Scissors</button>
+        <button value="rock" id="rock">Rock</button>
+    </div>
+        
+<script src="script.js"></script>
 </body>
 </html>
