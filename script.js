@@ -67,23 +67,31 @@
                     let computerSelection = computerPlay();
                     playRound(button1.value,computerSelection)      
                     if (playerScore === 5) {
-                        const winMsg = document.createElement("p");
                         document.getElementById('congrats').innerText = `Congrats! You won! The results is ${playerScore} for you and ${computerScore} for the computer`
-                        container.appendChild(winMsg)
-                        
                     }
                     else if (computerScore === 5) {
-                        const pcWinMsg = document.querySelector("#winmsg");
                         document.getElementById('congrats').innerText = `You lost! The results is ${playerScore} for you and ${computerScore} for the computer`
-                        container.appendChild(pcWinMsg)
                     }
+                    
+
 
                 })
             })
         }
 
-if(computerScore < 5 && playerScore < 5){
-    game()
-}
+const playAgain = document.querySelector('#playAgain');
+playAgain.addEventListener('click', () => {
+    computerScore = 0;
+    playerScore = 0;
+    document.getElementById("scorePlayer").innerText = playerScore;
+    document.getElementById("scoreComputer").innerText = computerScore;
+    document.getElementById('result').innerText =""
+});
+       
+
+
+game()
+
+
 
 
