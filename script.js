@@ -1,6 +1,7 @@
         let playerScore  = 0;
         let computerScore = 0;
         const container = document.querySelector("#display");
+        const buttons = document.querySelectorAll(".btn");
 
 
         function computerPlay() {
@@ -56,25 +57,29 @@
 
 
 
-        
 
 
         function game() {
-            const buttons = document.querySelectorAll("#btn");
             buttons.forEach((button1) => {
                 
                 button1.addEventListener("click",() => {
                     let computerSelection = computerPlay();
-                    playRound(button1.value,computerSelection)      
+                    playRound(button1.id,computerSelection)      
                     if (playerScore === 5) {
                         document.getElementById('congrats').innerText = `Congrats! You won! The results is ${playerScore} for you and ${computerScore} for the computer`
                     }
                     else if (computerScore === 5) {
                         document.getElementById('congrats').innerText = `You lost! The results is ${playerScore} for you and ${computerScore} for the computer`
                     }
-                    
-
-
+                        if (playerScore === 5 || computerScore === 5) {
+                            console.log("test")
+                            let all = document.querySelectorAll("button")
+                            all.forEach((button) => {
+                                console.log(button)
+                                button.classList.remove("btn")
+                                button.removeAttribute("id")
+                            })
+                        }
                 })
             })
         }
@@ -85,7 +90,9 @@ playAgain.addEventListener('click', () => {
     playerScore = 0;
     document.getElementById("scorePlayer").innerText = playerScore;
     document.getElementById("scoreComputer").innerText = computerScore;
-    document.getElementById('result').innerText =""
+    document.getElementById('result').innerText ="Welcome to RPC! Click any of the buttons below to start."
+    document.getElementById("congrats").innerText = ""
+
 });
        
 
