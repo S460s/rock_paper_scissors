@@ -3,7 +3,6 @@
         const container = document.querySelector("#display");
         const buttons = document.querySelectorAll("#btn");
 
-
         function computerPlay() {
             // Chooses a random value for computerPlay.
             switch (Math.floor(Math.random() * 3)) {
@@ -82,16 +81,13 @@ playAgain.addEventListener('click', () => {
     playerScore = 0;
     document.getElementById("scorePlayer").innerText = playerScore;
     document.getElementById("scoreComputer").innerText = computerScore;
-    document.getElementById('result').innerText ="Welcome to RPC! Click any of the buttons below to start."
+    document.getElementById('result').innerText ="Click any of the buttons below to start playing again."
     document.getElementById("congrats").innerText = ""
     buttons.forEach((button) => {
         button.setAttribute("id", "btn")
     })
-
 });
 }
-
-
 game()
 playAgain()
 

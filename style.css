@@ -1,14 +1,49 @@
 
+h1{
+    color: rgb(126, 195, 255);
+    text-align: center;
+    font-size: 80px;
+    word-spacing: 5px;
+    margin-top: 20px;
+    text-shadow: 0 0 10px #2196f3, 0 0 15px #2196f3, 0 0 20px #2196f3;
+}
+.neon:hover, #scorePlayer:hover, #scoreComputer:hover,p:hover{
+    animation: glow 1s ease-in-out infinite alternate;
+}
+@keyframes glow {
+    from {
+      text-shadow: 0 0 10px #2196f3, 0 0 20px rgb(138, 155, 255), 0 0 30px #6264ff, 0 0 40px #6250ff, 0 0 50px #3814ff, 0 0 60px #1a1eff, 0 0 70px #0c0052;
+    }
+    to {
+      text-shadow: 0 0 20px rgb(0, 183, 255), 0 0 30px #68afff, 0 0 40px #30a2ff, 0 0 50px #15b5ff, 0 0 60px #006eff6e, 0 0 70px #2e5fff, 0 0 80px #1100ff;
+    }
+  }
+main{
+    max-width: 500px;
+    max-height: 800px;
+    margin: auto;
+    margin-top: 50px;
+    border: solid #2196f3;
+    box-shadow: 0 0 10px #2196f3, 0 0 15px #2196f3, 0 0 20px #2196f3;
+    border-radius: 5px;
+}
+#result{
+    word-spacing: 2px;
+    font-size: larger;
+}
 body{
-    background-color: burlywood;
+    background: #031321;
+    color: #2196f3;
 }
-
-span{
-    font-size: 30px;
-}
-
 #scorePlayer, #scoreComputer{
     font-size: 100px;
+    text-decoration: none;
+}
+button:hover{
+    color: #255784;
+    background: #2196f3;
+    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+    transition: 0.3s;
 }
 #display{
     border: solid 1px ;
@@ -20,7 +55,13 @@ span{
 button{
     width: 120px;
     height: 60px;
-    background-color: burlywood;
+    background-color: #031321;
+    color: #2196f3;
+    border: none;
+    margin: 20px 10px 0px 10px ;
+    outline: none;
+    border-radius: 5px;
+    font-size: 20px;
 }
 #options{
     display: flex;
@@ -29,13 +70,30 @@ button{
 #playAgain{
     display: block;
     margin: auto;
-    width: 30%;
-    margin-top: 20px;
+    width: 300px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 25px;
 }
-
 #messages{
     text-align: center;
     border: solid;
     display: flex;
     flex-direction: column;
+}
+@media (max-width: 400px){
+    h1{
+        font-size: 40px;
+    }
+    main{
+        height: 650px;
+        width: 300px;
+    }
+    #result{
+        font-size: large;
+    }
+    button{
+        width: 90px;
+        height: 30px;
+    }
 }
