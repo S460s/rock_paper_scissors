@@ -83,6 +83,8 @@ button{
     border: solid;
     display: flex;
     flex-direction: column;
+    border-left: 0;
+    border-right: 0;
 }
 @media (max-width: 500px){
     h1{
