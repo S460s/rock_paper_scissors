@@ -14,7 +14,7 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         document.getElementById('result').innerText = ("Tie!")
     }
-    else if (playerSelection.length - computerSelection.length < 0 || playerSelection.length - computerSelection.length === 4 && playerSelection.length - computerSelection.length !== -4) {
+    else if (playerSelection.length - computerSelection.length === -1 || playerSelection.length - computerSelection.length === 4 || playerSelection.length - computerSelection.length === -3) {
         computerScore++
         document.getElementById('scoreComputer').innerText = (computerScore)
         document.getElementById('result').innerText = (`You lost! ${computerSelection} beats ${playerSelection}.`)
